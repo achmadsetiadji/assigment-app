@@ -8,9 +8,7 @@
     ],
     "license": "MIT",
     "require": {
-        "php": "^8.0.2",        
-        "captainhook/captainhook": "^5.16",
-        "captainhook/plugin-composer": "^5.3",
+        "php": "^8.0.2",
         "doctrine/dbal": "^3.3",        
         "itsgoingd/clockwork": "^5.1",
         "lab404/laravel-impersonate": "^1.7",
@@ -47,11 +45,6 @@
         }
     },
     "scripts": {
-        "post-autoload-dump": [
-            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover --ansi",
-            "vendor/bin/captainhook install -f -s"
-        ],
         "post-update-cmd": [
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
         ],
@@ -60,9 +53,6 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
-        ],
-        "code-check": [
-            "./vendor/bin/phpstan analyse"
         ]
     },
     "extra": {
